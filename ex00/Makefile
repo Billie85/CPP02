@@ -1,6 +1,7 @@
 NAME	= Fixed
 
 SRCS	= main.cpp \
+		  Fixed.cpp
 
 OBJS		= $(SRCS:%.cpp=%.o)
 

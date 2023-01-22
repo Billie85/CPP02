@@ -1,14 +1,12 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(int store_fized_num)
+Fixed::Fixed(int fixed_pointer_num)
 {
-	store_fized_num = 0;
+	fixed_pointer_num = 0;
 }
 
 Fixed::~Fixed()
-{
-
-}
+{}
 
 void setRawBits(int const raw)
 {
