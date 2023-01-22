@@ -1,12 +1,17 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(int fixed_pointer_num)
+// A default constructor that initializes 
+//the fixed-point number value to 0.
+Fixed::Fixed()
 {
-	fixed_pointer_num = 0;
+	this->fixed_pointer_num = 0; 
+	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::~Fixed()
-{}
+Fixed::Fixed(const Fixed &)
+{
+	std::cout << "Copy constructor called" << std::endl;
+}
 
 void setRawBits(int const raw)
 {
