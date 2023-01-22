@@ -7,14 +7,20 @@
 class Fixed
 {
 private:
-	int fixed_pointer_num; //固定小数点数値の値を格納するための整数。
-	static int const fractional_bits; //端数のビット数を格納する
+	int fixed_pointer_num;
+	static int const fractional_bits;
 public:
 	Fixed();
-	Fixed(const Fixed &);
 	~Fixed();
+	Fixed(const Fixed &F);
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
+	const Fixed &operator=(const Fixed &F)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->getRawBits();
+	return (F);
+}
 };
 
 #endif
