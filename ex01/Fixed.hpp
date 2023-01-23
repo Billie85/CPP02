@@ -8,8 +8,11 @@
 class Fixed
 {
 private:
-	/* data */
+	int fixed_point_number;
+	const int fractional_bits;
 public:
+	float toFloat(void) const;
+	int toInt( void ) const;
 	Fixed();
 	Fixed(int i);
 	Fixed(const Fixed &f);

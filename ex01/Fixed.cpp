@@ -1,5 +1,15 @@
 #include "Fixed.hpp"
 
+float Fixed::toFloat(void) const
+{
+	return (static_cast<float>(this->fixed_point_number));
+}
+
+int Fixed::toInt( void ) const
+{
+	return (static_cast<int>(this->fixed_point_number));
+}
+
 Fixed::Fixed(const Fixed &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
