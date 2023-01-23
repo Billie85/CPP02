@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-std::ostream &Fixed::operator<<(std::ostream &os, const Fixed &f)
+std::ostream &operator<<(std::ostream &os, const Fixed &f)
 {
 	os << f.toFloat();
 	return (os);
@@ -26,28 +26,29 @@ int Fixed::toInt(void)const//少数->整数
 	return (i);
 }
 
-Fixed::Fixed(const Fixed &f) : position(8)
+Fixed::Fixed(const Fixed &f) :fractional_bits(8)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->operator=(f);
 }
 
-Fixed::Fixed(int i) : position(8)
+Fixed::Fixed(int i) :fractional_bits(8)
 {
 	std::cout <<"Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(float fl) : position(8) //少数->整数 
+Fixed::Fixed(float fl) :fractional_bits(8) //少数->整数 
 {
 	std::cout << "Float constructor called" << std::endl;
  	for (int i = 0; i < fractional_bits; i++)
 	{
 		fl = fl * 2;
 	}
-	this->fixed_point_number = floor(fl); *///少数点以降を消すから整数の部分だけ入れてあげる。
+	this->fixed_point_number = float(fl);//少数点以降を消すから整数の部分だけ入れてあげる。
+	std::cout << "----------"  <<this->fixed_point_number << std::endl;
 }
 
-Fixed::Fixed() : position(8)
+Fixed::Fixed() : fractional_bits(8)
 { 
 	std::cout << "Default constructor called" << std::endl;
 }
