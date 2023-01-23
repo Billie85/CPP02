@@ -1,18 +1,17 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-
 #include <iostream>
 #include <string>
 
-class Fixed
+class Fixed //staticがないからFixedクラスを作った瞬間に呼ばれる。
 {
 private:
 	int fixed_point_number;
 	const int fractional_bits;
 public:
-	float toFloat(void) const;
-	int toInt( void ) const;
+	float toFloat(void)const;
+	int toInt(void)const;
 	Fixed();
 	Fixed(int i);
 	Fixed(const Fixed &f);
@@ -24,5 +23,6 @@ public:
 		return(o);
 	}
 };
+	std::ostream &operator<<(std::ostream &os, const Fixed &f)
 
 #endif
