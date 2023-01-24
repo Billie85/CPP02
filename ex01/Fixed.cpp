@@ -48,7 +48,7 @@ Fixed::Fixed(float fl) :fractional_bits(8) //少数->整数
 	}
 	/* std::cout << "before" << fl << std::endl;
 	std::cout << "after" << round(fl) << std::endl; */
-	this->fixed_point_number = float(fl);//少数点以降を消すから整数の部分だけ入れてあげる。
+	this->fixed_point_number = roundf(fl);
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &f)
@@ -59,7 +59,7 @@ std::ostream &operator<<(std::ostream &os, const Fixed &f)
 
  float Fixed::toFloat(void)const//整数->少数
 {
-	float f = this->fixed_point_number; //floatに一回渡してあげないと小数点を付けれるようになる。
+	float f = this->fixed_point_number;
 	for (int i = 0; i < this->fractional_bits; i++)
 	{
 		f /= 2;
@@ -72,7 +72,7 @@ int Fixed::toInt(void)const//少数->整数
 	int i = this->fixed_point_number;
 	for (int j = 0; j < this->fractional_bits; j++)
 	{
-		i *= 2;
+		i /= 2;
 	}
 	return (i);
 }
