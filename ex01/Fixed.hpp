@@ -10,18 +10,18 @@ class Fixed //staticがないからFixedクラスを作った瞬間に呼ばれ�
 		int fixed_point_number;
 		const int fractional_bits;
 	public:
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+
 		float toFloat(void)const;
 		int toInt(void)const;
+
+		const Fixed &operator=(const Fixed &o);
 		Fixed();
 		Fixed(int i);
 		Fixed(const Fixed &f);
 		Fixed(float fl);
 		~Fixed();
-		const Fixed &operator=(const Fixed &o)
-		{
-			std::cout << "Copy assignment operator called" << std::endl;
-			return(o);
-		}
 };
 std::ostream &operator<<(std::ostream &os, const Fixed &f);
 #endif
