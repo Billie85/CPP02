@@ -34,7 +34,7 @@ Fixed::Fixed( Fixed const &f) :fractional_bits(8)
 //int constructor
 Fixed::Fixed(int i) :fractional_bits(8)
 {
-	std::cout <<"Int constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 	this->fixed_point_number = i << this->fractional_bits; //?
 }
 
@@ -46,8 +46,6 @@ Fixed::Fixed(float fl) :fractional_bits(8) //少数->整数
 	{
 		fl = fl * 2;
 	}
-	/* std::cout << "before" << fl << std::endl;
-	std::cout << "after" << round(fl) << std::endl; */
 	this->fixed_point_number = roundf(fl);
 }
 
