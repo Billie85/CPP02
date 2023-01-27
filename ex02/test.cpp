@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath> 
 
-class test
+/* class test
 {
 private:
 	int a;
@@ -57,4 +57,9 @@ int main(void)
 	j.set(20);
 	j = j - i;
 	std::cout << j.get() << std::endl;
-}
+} */
+
+/* int main(void)
+{
+	std::cout << round(646.4) << std::endl;
+} */
