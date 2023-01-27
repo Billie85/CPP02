@@ -23,6 +23,13 @@ class Fixed
 		~Fixed();
 
 		Fixed &operator=(const Fixed &other);
+		//min
+		static Fixed const &min(Fixed const& a, Fixed const& b);
+		static Fixed &min(Fixed &a,  Fixed &b);
+		//max
+		static Fixed const &max(Fixed const& a, Fixed const& b);
+		static Fixed &max(Fixed &a, Fixed &b);
+
 		//The 6 comparison operators: >, <, >=, <=, == and !=.
 		bool operator>(const Fixed &other) const;
 		bool operator<(const Fixed &other) const;
@@ -46,12 +53,6 @@ class Fixed
 		 //Overload post-decrement operator
 		 Fixed operator--(int);
 		
-		//min
-		static Fixed const &min(Fixed const& a, Fixed const& b);
-		static Fixed &min(Fixed &a,  Fixed &b);
-		//max
-		static Fixed const &max(Fixed const& a, Fixed const& b);
-		static Fixed &max(Fixed &a, Fixed &b);
 };
 std::ostream &operator<< (std::ostream &os, Fixed const f);
 

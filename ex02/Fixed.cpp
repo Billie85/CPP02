@@ -153,28 +153,28 @@ std::ostream &operator<< (std::ostream &os, Fixed const f)
 	return (os);
 }
 
-static const Fixed &min(const Fixed &a, const Fixed &b)
+ const Fixed  &Fixed::min(const Fixed &a, const Fixed &b)
 {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-static const Fixed &max(const Fixed &a, const Fixed &b)
+ const Fixed  &Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if (a < b)
 		return (b);
 	return (a);
 }
 
-static  Fixed &min( Fixed &a,  Fixed &b)
+Fixed  &Fixed::min( Fixed &a,  Fixed &b)
 {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-static  Fixed &max( Fixed &a,  Fixed &b)
+Fixed  &Fixed::max( Fixed &a,  Fixed &b)
 {
 	if (a < b)
 		return (b);
