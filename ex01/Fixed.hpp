@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cmath> 
 
-class Fixed //staticがないからFixedクラスを作った瞬間に呼ばれる。
+class Fixed
 {
 	private:
 		int fixed_point_number;

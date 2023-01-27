@@ -8,7 +8,7 @@ class Fixed
 {
 private:
 	int fixed_pointer_num;
-	static int const fractional_bits = 8;
+	static int const fractional_bits;
 public:
 	Fixed();
 	~Fixed();

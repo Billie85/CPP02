@@ -1,20 +1,12 @@
 #include "Fixed.hpp"
 
-// A default constructor that initializes 
-//the fixed-point number value to 0.
-
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-}
-
-Fixed::Fixed()
+Fixed::Fixed() :fractional_bits(8)
 {
 	this->fixed_pointer_num = 0; 
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& F)
+Fixed::Fixed(const Fixed &F) :fractional_bits(8)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->operator=(F);
@@ -29,4 +21,8 @@ int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->fixed_pointer_num);
+}
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
 }

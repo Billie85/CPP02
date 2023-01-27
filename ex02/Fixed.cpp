@@ -59,7 +59,7 @@ Fixed::Fixed(int i) :fractional_bits(8)
 Fixed::Fixed(const Fixed &f) :fractional_bits(8)
 {
 	//std::cout << "const constructor called" << std::endl;
-	*this = f; //copy the value to a ponter 
+	*this = f; 
 }
 
 Fixed::Fixed(float fl) :fractional_bits(8)
