@@ -8,7 +8,7 @@ class Fixed
 {
 private:
 	int fixed_pointer_num;
-	static int const fractional_bits;
+	static int const fractional_bits = 8;
 public:
 	Fixed();
 	~Fixed();
@@ -18,7 +18,7 @@ public:
 	const Fixed &operator=(const Fixed &F)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->getRawBits();
+	this->fixed_pointer_num = F.getRawBits();
 	return (F);
 }
 };

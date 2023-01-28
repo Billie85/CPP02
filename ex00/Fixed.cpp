@@ -1,12 +1,12 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed() :fractional_bits(8)
+Fixed::Fixed()
 {
 	this->fixed_pointer_num = 0; 
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &F) :fractional_bits(8)
+Fixed::Fixed(const Fixed &F)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->operator=(F);
