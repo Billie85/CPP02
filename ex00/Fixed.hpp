@@ -15,12 +15,7 @@ public:
 	Fixed(const Fixed &F);
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
-	const Fixed &operator=(const Fixed &F)
-{
-	std::cout << "Copy assignment operator called" << std::endl;
-	this->fixed_pointer_num = F.getRawBits();
-	return (F);
-}
+	const Fixed &operator=(const Fixed &F);
 };
 
 #endif

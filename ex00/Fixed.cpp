@@ -1,5 +1,12 @@
 #include "Fixed.hpp"
 
+const Fixed &Fixed::operator=(const Fixed &F)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->fixed_pointer_num = F.getRawBits();
+	return (*this);
+}
+
 Fixed::Fixed()
 {
 	this->fixed_pointer_num = 0; 
